@@ -19,17 +19,17 @@ export default function Add() {
     try {
       if (!category) {
         console.log("Sem categoria selecionada");
-        //return Alert.alert("Categoria", "Selecione a categoria");
+        return Alert.alert("Categoria", "Selecione a categoria");
       }
 
       if (!name.trim()) {
         console.log("Informe um nome");
-        //return Alert.alert("Nome", "Informe o nome");
+        return Alert.alert("Nome", "Informe o nome");
       }
 
       if (!url.trim()) {
         console.log("Informe uma url");
-        //return Alert.alert("URL", "Informe uma URL");
+        return Alert.alert("URL", "Informe uma URL");
       }
 
       await linkStorage.save({
@@ -43,7 +43,7 @@ export default function Add() {
         { text: "OK", onPress: () => router.back() },
       ]);
     } catch (error) {
-      //Alert.alert("Erro", "Não foi possível salvar o link");
+      Alert.alert("Erro", "Não foi possível salvar o link");
       console.log(error);
     }
   }
